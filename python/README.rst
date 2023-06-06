@@ -10,14 +10,14 @@ deez_py
    :target: https://pypi.org/project/deez_py/
    :alt: pypi version
 
-**deez_py** is a Python implementation of a lexical analyzer that provides comprehensive scanning, and lookahead capabilities.
+**deez_py** is python implementation of a lexical analyzer that provides comprehensive scanning, and lookahead capabilities. It also implements a parser that comes with awesome functionalities.
 
 🛠️ Requirements
 ---------------
 
-**deez_py** requires Python 3.9 or above.
+**deez_py** requires Python 3.10 or above.
 
-To install Python 3.9, I recommend using `pyenv`_.
+To install Python 3.10.1, we recommend using `pyenv`_.
 
 .. code-block:: bash
 
@@ -40,28 +40,29 @@ To install Python 3.9, I recommend using `pyenv`_.
    export PYENV_ROOT="${HOME}/.pyenv"
    eval "$(pyenv init -)"
    EOF
+
    # Close and open a new shell session
-   # install Python 3.9.10
-   pyenv install 3.9.10
+   # install Python 3.10.1
+   pyenv install 3.10.1
 
    # make it available globally
-   pyenv global system 3.9.10
+   pyenv global system 3.10.1
 
 
-To manage the Python 3.9 virtualenv, I recommend using `poetry`_.
+To manage the Python 3.10.1 virtualenv, we recommend using `poetry`_.
 
 .. code-block:: bash
 
    # install poetry
    curl -sSL https://install.python-poetry.org | python3 -
    poetry --version
-   Poetry version 1.1.13
+   Poetry (version 1.5.1)
 
    # Having the python executable in your PATH, you can use it:
-   poetry env use 3.9.10
+   poetry env use 3.10.1
 
    # However, you are most likely to get the following issue:
-   Creating virtualenv deez_py-dxc671ba-py3.9 in ~/.cache/pypoetry/virtualenvs
+   Creating virtualenv deez_py-dxc671ba-py3.10 in ~/.cache/pypoetry/virtualenvs
 
    ModuleNotFoundError
 
@@ -74,8 +75,8 @@ To manage the Python 3.9 virtualenv, I recommend using `poetry`_.
    python3 -m pip install -U virtualenv
 
    # Now, you can just use the minor Python version in this case:
-   poetry env use 3.9.10
-   Using virtualenv: ~/.cache/pypoetry/virtualenvs/deez_py-dxc671ba-py3.9
+   poetry env use 3.10.1
+   Using virtualenv: ~/.cache/pypoetry/virtualenvs/deez_py-dxc671ba-py3.10
 
 
 🚨 Installation
@@ -107,52 +108,6 @@ With :code:`pip`:
    Token(type=<TokenType.Comma: ','>, literal=',')
    Token(type=<TokenType.Semicolon: ';'>, literal=';')
    Token(type=<TokenType.Eof: 'EOF'>, literal='EOF')
-
-
-👨‍💻 Development
---------------
-
-For local development, you can install all dependencies by running:
-
-.. code-block:: bash
-
-   make install
-
-
-🧪 Testing
-----------
-
-.. code-block:: bash
-
-   make test
-   # or
-   pytest -vv tests
-
-
-💡 Tips
--------
-
-To run a subset of tests:
-
-.. code-block:: bash
-
-   make test
-   make lint
-   make coverage
-
-
-🚀 Deploying
-------------
-
-A reminder for maintainers on how to deploy. Run the following commands in order:
-
-.. code-block:: bash
-
-   bump2version patch # possible: major / minor / patch
-   git push
-   git push --tags
-   make dist
-   make release
 
 
 📝 License
